@@ -1,8 +1,8 @@
 namespace Calculator.Lib;
 
-public class OperationDivision : Operation
+public class OperationDivision : IOperation
 {
-    public override double Execute(double first, double second)
+    public double Execute(double first, double second)
     {
         if (second == 0)
             throw new Exception("You can't divide by zero");

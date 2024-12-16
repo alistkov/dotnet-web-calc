@@ -1,8 +1,8 @@
 namespace Calculator.Lib;
 
-public class OperationMultiplication : Operation
+public class OperationMultiplication : IOperation
 {
-    public override double Execute(double first, double second)
+    public double Execute(double first, double second)
     {
         return first * second;
     }

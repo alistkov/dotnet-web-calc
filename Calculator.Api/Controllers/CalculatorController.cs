@@ -6,21 +6,14 @@ namespace Calculator.Api.Controllers;
 
 [ApiController]
 [Route("api/calculator")]
-public class CalculatorController : ControllerBase
+public class CalculatorController(IOperationFactory operationFactory) : ControllerBase
 {
     [HttpGet]
-    public string CalculateArgs(
+    public ActionResult<string> CalculateArgs(
         [FromQuery] double first, [FromQuery] string operation, [FromQuery] double second)
     {
-        Operation operationCls = operation switch
-        {
-            "add" => new OperationAddition(),
-            "sub" => new OperationSubtraction(),
-            "mult" => new OperationMultiplication(),
-            "div" => new OperationDivision(),
-            _ => throw new Exception("Unknown operation")
-        };
-
+        var operationCls = operationFactory.GetOperation(operation);
+        
         var result = operationCls.Execute(first, second);
 
         var resultJson = new
@@ -31,6 +24,6 @@ public class CalculatorController : ControllerBase
             result
         };
 
-        return JsonConvert.SerializeObject(resultJson);
+        return Ok(resultJson);
     }
 }
