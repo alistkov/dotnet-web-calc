@@ -1,3 +1,4 @@
+using Calculator.Api.Middleware;
 using Calculator.Lib;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseHttpsRedirection();
+app.UseOperationImplement();
 app.MapControllers();
 
 app.Run();
