@@ -1,4 +1,5 @@
 using Calculator.Lib;
+using Calculator.Lib.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 

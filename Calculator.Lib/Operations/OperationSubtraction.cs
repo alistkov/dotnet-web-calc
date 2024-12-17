@@ -1,4 +1,6 @@
-namespace Calculator.Lib;
+using Calculator.Lib.Interfaces;
+
+namespace Calculator.Lib.Operations;
 
 public class OperationSubtraction : IOperation
 {

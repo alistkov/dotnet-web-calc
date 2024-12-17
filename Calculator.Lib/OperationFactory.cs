@@ -1,3 +1,6 @@
+using Calculator.Lib.Interfaces;
+using Calculator.Lib.Operations;
+
 namespace Calculator.Lib;
 
 public class OperationFactory : IOperationFactory
