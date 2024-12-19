@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
-builder.Services.AddSingleton<IOperationFactory, ReverseOperationFactory>();
+builder.Services.AddSingleton<IOperationFactory, OperationDecorator>();
 
 var app = builder.Build();
 
