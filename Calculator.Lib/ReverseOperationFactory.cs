@@ -1,8 +1,10 @@
+using Calculator.Lib.Interfaces;
+using Calculator.Lib.Operations;
+
 namespace Calculator.Lib;
 
 public class ReverseOperationFactory : IOperationFactory
 {
-    
     public IOperation GetOperation(string operation)
     {
         IOperation operationCls = operation switch

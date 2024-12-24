@@ -12,8 +12,8 @@
             <param name="operation">Operation (add/sub/mult/div)</param>
             <param name="second">Second number</param>
             <returns>Returns result or bad request if operation is division and second operand is 0</returns>
-            <response code="200">Return result of calculation</response>
-            <response code="400">Return error when operation is division and second operand is 0</response>
+            <response code="200">Returns result of calculation</response>
+            <response code="400">Returns error when operation is division and second operand is 0</response>
         </member>
         <member name="T:Calculator.Api.ReturnModel">
             <summary>
