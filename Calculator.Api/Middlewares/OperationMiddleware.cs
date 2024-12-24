@@ -1,5 +1,5 @@
-using Calculator.Lib;
-using Calculator.Lib.Interfaces;
+using Calculator.Application.Base;
+using Calculator.Application.Interfaces;
 
 namespace Calculator.Api.Middlewares;
 

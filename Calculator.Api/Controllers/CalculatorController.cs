@@ -1,5 +1,5 @@
+using Calculator.Application.Interfaces;
 using Calculator.Domain.Entities;
-using Calculator.Lib.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Calculator.Api.Controllers;

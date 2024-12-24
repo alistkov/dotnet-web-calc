@@ -1,5 +1,6 @@
 using System.Reflection;
 using Calculator.Api.Middlewares;
+using Calculator.Application;
 
 namespace Calculator.Api;
 
@@ -20,6 +21,9 @@ public static class StartupExtensions
      
             configuration.IncludeXmlComments(xmlCommentsFullPath);
         });
+
+        builder.Services
+            .AddApplication();
         
         return builder.Build();
     }
