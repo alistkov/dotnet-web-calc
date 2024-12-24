@@ -1,0 +1,19 @@
+services:
+  calculator-api:
+    image: calculator-api
+    build:
+      context: .
+      dockerfile: Calculator.Api/Dockerfile
+    ports:
+      - "5010:8080"
+  
+  calculator-db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: calculator
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Password1234
+    ports:
+      - "5433:5432"
+    container_name: calculator-db
