@@ -1,10 +1,18 @@
 using Calculator.Api.Middlewares;
+using System.Reflection;
 using Calculator.Lib;
 using Calculator.Lib.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSwaggerGen();
+
+builder.Services.AddSwaggerGen(configuration =>
+{
+    var xmlCommentsFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlCommentsFullPath = Path.Combine(AppContext.BaseDirectory, xmlCommentsFile);
+    
+    configuration.IncludeXmlComments(xmlCommentsFullPath);
+});
 builder.Services.AddControllers();
 builder.Services.AddSingleton<IOperationFactory, OperationDecorator>();
 builder.Services.AddScoped<OperationMiddleware>();

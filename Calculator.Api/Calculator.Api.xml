@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Calculator.Api</name>
+    </assembly>
+    <members>
+        <member name="M:Calculator.Api.Controllers.CalculatorController.CalculateArgs(System.Double,System.String,System.Double)">
+            <summary>
+            Calculates the result based on two operands and an operation
+            </summary>
+            <param name="first">First number</param>
+            <param name="operation">Operation (add/sub/mult/div)</param>
+            <param name="second">Second number</param>
+            <returns>Returns result or bad request if operation is division and second operand is 0</returns>
+            <response code="200">Return result of calculation</response>
+            <response code="400">Return error when operation is division and second operand is 0</response>
+        </member>
+        <member name="T:Calculator.Api.ReturnModel">
+            <summary>
+            Result data
+            </summary>
+        </member>
+        <member name="P:Calculator.Api.ReturnModel.First">
+            <summary>
+            First number
+            </summary>
+        </member>
+        <member name="P:Calculator.Api.ReturnModel.Operation">
+            <summary>
+            Operation (add/sub/mult/div)
+            </summary>
+        </member>
+        <member name="P:Calculator.Api.ReturnModel.Second">
+            <summary>
+            Second number
+            </summary>
+        </member>
+        <member name="P:Calculator.Api.ReturnModel.Result">
+            <summary>
+            Result
+            </summary>
+        </member>
+    </members>
+</doc>
