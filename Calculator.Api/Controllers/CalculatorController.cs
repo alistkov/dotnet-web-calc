@@ -1,11 +1,13 @@
 using Calculator.Domain.Entities;
-using Calculator.Lib;
 using Calculator.Lib.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 
 namespace Calculator.Api.Controllers;
 
+/// <summary>
+/// Calculation controller
+/// </summary>
+/// <param name="operationFactory">Operation factory</param>
 [ApiController]
 [Route("api/calculator")]
 public class CalculatorController(IOperationFactory operationFactory) : ControllerBase
