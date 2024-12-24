@@ -1,3 +1,4 @@
+using Calculator.Domain.Entities;
 using Calculator.Lib;
 using Calculator.Lib.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -21,14 +22,14 @@ public class CalculatorController(IOperationFactory operationFactory) : Controll
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public ActionResult<ReturnModel> CalculateArgs(
+    public ActionResult<ReturnEntity> CalculateArgs(
         [FromQuery] double first, [FromQuery] string operation, [FromQuery] double second)
     {
         try
         {
             var operationCls = operationFactory.GetOperation(operation);
 
-            return Ok( new ReturnModel
+            return Ok( new ReturnEntity
             {
                 First = first,
                 Second = second,

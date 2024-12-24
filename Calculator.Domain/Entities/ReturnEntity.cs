@@ -1,9 +1,9 @@
-namespace Calculator.Api;
+namespace Calculator.Domain.Entities;
 
 /// <summary>
-/// Result data
+/// Result data!!!
 /// </summary>
-public class ReturnModel
+public class ReturnEntity
 {
     /// <summary>
     /// First number
