@@ -1,4 +1,4 @@
-﻿namespace Calculator.Lib.Interfaces;
+namespace Calculator.Application.Interfaces;
 
 public interface IOperation
 {

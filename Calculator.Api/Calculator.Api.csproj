@@ -8,11 +8,11 @@
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-      <DocumentationFile>Calculator.Api.xml</DocumentationFile>
+      <DocumentationFile>bin\Debug\net9.0\Calculator.Api.xml</DocumentationFile>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <DocumentationFile>Calculator.Api.xml</DocumentationFile>
+      <DocumentationFile>bin\Release\net9.0\Calculator.Api.xml</DocumentationFile>
     </PropertyGroup>
 
     <ItemGroup>
@@ -22,7 +22,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Calculator.Lib\Calculator.Lib.csproj" />
+      <ProjectReference Include="..\Calculator.Application\Calculator.Application.csproj" />
     </ItemGroup>
 
     <ItemGroup>

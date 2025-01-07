@@ -1,6 +1,6 @@
-using Calculator.Lib.Interfaces;
+using Calculator.Application.Interfaces;
 
-namespace Calculator.Lib;
+namespace Calculator.Application.Base;
 
 public class OperationDecorator : IOperationFactory
 {

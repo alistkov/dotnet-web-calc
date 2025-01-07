@@ -1,10 +1,13 @@
-using Calculator.Lib;
-using Calculator.Lib.Interfaces;
+using Calculator.Application.Interfaces;
+using Calculator.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 
 namespace Calculator.Api.Controllers;
 
+/// <summary>
+/// Calculation controller
+/// </summary>
+/// <param name="operationFactory">Operation factory</param>
 [ApiController]
 [Route("api/calculator")]
 public class CalculatorController(IOperationFactory operationFactory) : ControllerBase
@@ -21,14 +24,14 @@ public class CalculatorController(IOperationFactory operationFactory) : Controll
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public ActionResult<ReturnModel> CalculateArgs(
+    public ActionResult<ReturnEntity> CalculateArgs(
         [FromQuery] double first, [FromQuery] string operation, [FromQuery] double second)
     {
         try
         {
             var operationCls = operationFactory.GetOperation(operation);
 
-            return Ok( new ReturnModel
+            return Ok( new ReturnEntity
             {
                 First = first,
                 Second = second,

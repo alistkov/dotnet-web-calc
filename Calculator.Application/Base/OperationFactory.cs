@@ -1,7 +1,7 @@
-using Calculator.Lib.Interfaces;
-using Calculator.Lib.Operations;
+using Calculator.Application.Interfaces;
+using Calculator.Application.Operations;
 
-namespace Calculator.Lib;
+namespace Calculator.Application.Base;
 
 public class OperationFactory : IOperationFactory
 {

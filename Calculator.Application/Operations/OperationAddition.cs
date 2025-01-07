@@ -1,6 +1,6 @@
-using Calculator.Lib.Interfaces;
+using Calculator.Application.Interfaces;
 
-namespace Calculator.Lib.Operations;
+namespace Calculator.Application.Operations;
 
 public class OperationAddition : IOperation
 {
